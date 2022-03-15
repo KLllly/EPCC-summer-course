@@ -51,6 +51,7 @@ int main(int argc, char **argv) {
                 Temperature_last[i][j] = Temperature[i][j];
             }
         }
+        // printf("iter: %d dt: %lf\n", iteration, dt);
 
         // periodically print test values
         if (iteration % 100 == 0) {

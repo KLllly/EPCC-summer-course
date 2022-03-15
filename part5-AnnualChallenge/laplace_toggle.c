@@ -76,13 +76,17 @@ void initialize(void) {
     // these boundary conditions never change thoughout run
     // set left side to 0 and right side to a linear increase
     for (i = 0; i <= ROWS+1; i++) {
+        grid_a[i][0] = 0.0;
         grid_b[i][0] = 0.0;
+        grid_a[i][COLUMNS+1] = (100.0/ROWS)*i;
         grid_b[i][COLUMNS+1] = (100.0/ROWS)*i;
     }
     
     // set top to 0 and bottom to linear increase
     for (j = 0; j <= COLUMNS+1; j++) {
+        grid_a[0][j] = 0.0;
         grid_b[0][j] = 0.0;
+        grid_a[ROWS+1][j] = (100.0/COLUMNS)*j;
         grid_b[ROWS+1][j] = (100.0/COLUMNS)*j;
     }
 }
